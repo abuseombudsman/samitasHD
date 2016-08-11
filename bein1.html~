@@ -8,8 +8,8 @@
 	<head>
 		<title>Samita' s - IPTV</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="AR_BEIN 1 HD Canal de deportes con eventos en línea directa desde en principio todas las partes del mundo. Idioma: àrabe, calidad: HD." />
-		<meta name="keywords" content="iptv, sport iptv, sport, bein, bein sport, olimpics games, champion league, europa league, rio 2016" />
+		<meta name="description" content="AR BEIN 1 HD Canal de deportes con eventos en línea directa desde en principio todas las partes del mundo. Idioma: àrabe, calidad: HD." />
+		<meta name="keywords" content="iptv, sport iptv, sport, bein, bein sport, olimpics games, champion league, europa league, rio 2016, AR BEIN 1 HD, HD, live sports." />
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
@@ -91,7 +91,7 @@
 								<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum. Maecenas luctus lectus at sapien. Consectetuer adipiscing elit.</p>-->
 								<div class="list-group">
 									<a class="list-group-item" href="//www.uefa.com/uefachampionsleague/" rel="nofollow"><img src="/images/uefachampionleague.png" width="80" height="100%" style="padding: 10px;"><span style="padding: 20px; horizontal-align: right;">      UEFA Champion League</span></a>
-  									<a class="list-group-item" href="//www.uefa.com/uefaeuropaleague/" rel="nofollow"><img src="/images/uefaeuropaleague.png" width="80" height="100%" style="padding: 10px;"><span style="padding: 20px; horizontal-align: right;""> UEFA Europa League</span></a>
+  									<!--<a class="list-group-item" href="//www.uefa.com/uefaeuropaleague/" rel="nofollow"><img src="/images/uefaeuropaleague.png" width="80" height="100%" style="padding: 10px;"><span style="padding: 20px; horizontal-align: right;""> UEFA Europa League</span></a>-->
   									<a class="list-group-item" href="//www.laliga.es/" rel="nofollow"><img src="/images/laliga.png" width="80" height="100%" style="padding: 10px;"><span style="padding: 20px; horizontal-align: right;"">      Liga BBVA</span></a>
 									<a class="list-group-item" href="//www.legaseriea.it/it" rel="nofollow"><img src="/images/seriea.png" width="80" height="100%" style="padding: 10px;"><span style="padding: 20px; horizontal-align: right;"">      Serie A</span></a>
 									<a class="list-group-item" href="//www.ligaportugal.pt/" rel="nofollow"><img src="/images/sagres.png" width="80" height="100%" style="padding: 10px;"><span style="padding: 20px; horizontal-align: right;"">      Liga Sagres</span></a>

@@ -1,0 +1,24 @@
+{
+   "background": {
+      "scripts": [ "js/background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "icons/movie-off.png",
+      "default_popup": "popup.html"
+   },
+   "default_locale": "en",
+   "description": "__MSG_appDesc__",
+   "icons": {
+      "128": "icons/icon-128.png",
+      "48": "icons/icon-48.png",
+      "96": "icons/icon-96.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5TcFjLckBTFchYNVl+tEcYo8fBV/bp39NFKsd1uvcx1XN5TbDTaS6ee9SbVxI4YTokQ4zGwRBtihLgyTfkIm1lDNIKZc0FjZkErk93dFVB817wOcSIeEyxKVW4vDCBaet1Bw7WySwinzFBiQ9sMIbmUKy7z+vd3vQaL6ISFTIOKFuuN+le1D6lAxdqdq0oebNnj+F0dBjJBViheL1uYyFrTU1vYvPmHa+iBJJuYyiHfJ+mKqNOaLMB+rTaxwywFwQLQ4pHO2SOEv+mDM/Su3aMIOkf8/jDDKYoqLpB4px04JKr/GBVn8TtzzbjeCKFnd6LMbGYUp0rRJLGmZXiXr+wIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "17.0.0.0",
+   "name": "VideoCast (VLC/Chromecast)",
+   "options_page": "index.html",
+   "permissions": [ "background", "sessions", "tabCapture", "storage", "webRequestBlocking", "unlimitedStorage", "webRequest", "activeTab", "\u003Call_urls>", "tabs", "http://*/*" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.1.0"
+}

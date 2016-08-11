@@ -1,0 +1,26 @@
+{
+   "appDesc": {
+      "message": "Open web videos in Chromecast or VLC"
+   },
+   "delete": {
+      "message": "Delete"
+   },
+   "disable": {
+      "message": "Disable"
+   },
+   "enable": {
+      "message": "Enable"
+   },
+   "error": {
+      "message": "Error"
+   },
+   "help": {
+      "message": "Help"
+   },
+   "helpText": {
+      "message": "VLC is not running or configured:"
+   },
+   "info": {
+      "message": "Video capture"
+   }
+}

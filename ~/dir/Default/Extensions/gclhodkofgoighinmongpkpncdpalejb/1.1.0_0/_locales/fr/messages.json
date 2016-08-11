@@ -1,0 +1,26 @@
+{
+   "appDesc": {
+      "message": "Ouvrir les videos web sur Chromecast ou VLC"
+   },
+   "delete": {
+      "message": "Supprimer"
+   },
+   "disable": {
+      "message": "Désactivé"
+   },
+   "enable": {
+      "message": "Activé"
+   },
+   "error": {
+      "message": "Erreur"
+   },
+   "help": {
+      "message": "Aide"
+   },
+   "helpText": {
+      "message": "VLC n'est pas lancé ou configuré :"
+   },
+   "info": {
+      "message": "Capture vidéo"
+   }
+}

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DotVPN</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/css/main.css" media="screen" />
+	<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="/js/popup.js"></script>
+	<script type="text/javascript" src="/js/jquery.bez.min.js"></script>
+</head>
+<body>
+<div class="wrap">
+	<div class="signin" id="signin-view" style="display:none">
+		<div class="sign">
+			<div class="logoicons levitate"></div>
+			<div class="logo" id="signin-logo"></div>
+			<div class="chart ch-welcome" id="welcome-chart"></div>
+		<!--Welcome-->
+				<div class="welcome" id="signin-email-box">
+					<div class="motto">Bank-level security<br />for all sites</div>
+					<div class="title">
+						<h1>Welcome to DotVPN</h1>
+					</div>
+					<div class="itop input"><input type="text" id="signin-email" placeholder="Type your email"></div>
+					<div class="button" id="signin-email-button">Get Started</div>
+				</div>
+		<!--Signin-->
+				<div class="signin" id="signin-password-box">
+					<div class="motto">Browse without borders and<br />bypass geo restrictions</div>
+					<div class="title">
+						<!--<h1>Hi <span id="signin-user-name"></span>!</h1>-->
+						<h1>Welcome Back!</h1>
+						<h3>Please, enter your password</h3>
+					</div>
+					<div class="itop input"><input type="password" id="signin-password" placeholder="Type your password"></div>
+					<div class="button" id="signin-button">Sign In</div>
+					<div class="extra" id="password-reset-link1">Need to recover password?</div>
+				</div>
+		<!--Password-->
+				<div class="password" id="signin-password-retry-box">
+					<div class="motto">Masked IP address for anonymity</div>
+					<div class="title">
+						<h2>Sorry, it’s not your password</h2>
+						<h3>Please, try again:</h3>
+					</div>
+					<div class="itop input"><input type="password" id="signin-retry-password" placeholder="Type your password"></div>
+					<div class="button" id="signin-retry-button">Sign In</div>
+					<div class="extra" id="password-reset-link">Need to recover password?</div>
+				</div>
+		<!--Activate-->
+				<div class="activate" id="password-reset-box">
+					<div class="motto">Encrypts online communications</div>
+					<div class="title">
+						<h3>Recovery letter was sent to:</h3>
+						<h4 id="password-reset-email"></h4>
+						<h4>Please, check your inbox folder</h4>
+					</div>
+					<div class="itop input"><input type="text" id="password-reset-code" placeholder="Type 4 digits code"></div>
+					<div class="button" id="password-activate-button">Activate</div>
+				</div>
+		<!--NewPassword-->
+				<div class="newpassword" id="password-set-box">
+					<div class="motto">Make web browsing<br />&amp; email private</div>
+					<div class="title">
+						<!--<h1><span id="password-reset-user-name"></span>!</h1>-->
+						<h2>Reset your password</h2>
+						<h4>Please, set up your new password</h4>
+					</div>
+					<div class="itop input"><input type="password" id="password-set-password" placeholder="Type new password"></div>
+					<div class="button" id="password-set-button">Setup &amp; Login</div>
+				</div>
+		<!--Signup-->
+				<div class="signup" id="signup-step1-box">
+					<div class="motto">Browse privately</div>
+					<div class="title">
+						<h1>Hello!</h1>
+						<h3 id="signup-email"></h3>
+						<h3>Please, set your password</h3>
+					</div>
+					<div class="itop input"><input type="password" id="signup-password" placeholder="Type your password"></div>
+					<div class="button" id="signup-step1-button">Next</div>
+					<div class="extra" id="signup-change-email-link">Change email address</div>
+					
+				</div>
+		<!--Name-->
+				<div class="name" id="signup-step2-box">
+					<div class="motto">30 days of<br />Turbo Speed for free!</div>
+					<div class="title">
+						<h1>Whats your name?</h1>
+					</div>
+					<div class="itop input"><input type="text" id="signup-name" placeholder="First name"></div>
+					<div class="ibot input"><input type="text" id="signup-last-name" placeholder="Last name"></div>
+					<div class="button" id="signup-step2-button">Sign Up</div>
+					
+				</div>
+				<div class="loader" id="loader"></div>
+		</div>
+	</div>
+	<div id="main-view" style="display:none">
+		<div id="app" class="app appmain app-green">
+		<div class="mainscreen">
+			<div class="header">
+				<div class="icon-menu"></div>
+				<div class="logo"></div>
+				<div class="icon-settings"></div>
+			</div>
+			<div class="appmain promo-off" id="promo">
+				<div class="connection">
+					<div class="toggle" id="connect-button">
+						<h3 id="timer"></h3>
+						<div class="switch switch-round">
+						</div>
+					</div>
+					<h3 id="conn-state-label" data-connected="Connected" data-connecting="Connecting" data-disconnected="Disconnected"></h3>
+				</div>
+				<div class="chart"></div>
+				<div class="activity">
+					<h4>Blocked Activity</h4>
+					<div class="advertising">
+						<h2 id="adblock-stat">0</h2>
+						<h3>advertising</h3>
+					</div>
+					<div class="trackers">
+						<h2 id="trackers-stat">0</h2>
+						<h3>trackers</h3>
+					</div>
+					<div class="analytics">
+						<h2 id="analytics-stat">0</h2>
+						<h3>analytics</h3>
+					</div>
+					<div class="firewall">
+						<h2 id="firewall-stat">0</h2>
+						<h3>firewall</h3>
+					</div>
+				</div>
+				<div class="map">
+					<div class="ca off"></div>
+					<div class="es off"></div>
+					<div class="de off"></div>
+					<div class="us off"></div>
+					<div class="uk off"></div>
+					<div class="fr off"></div>
+					<div class="jp off"></div>
+					<div class="nl off"></div>
+					<div class="no off"></div>
+					<div class="sg off"></div>
+					<div class="se off"></div>
+					<div class="ru off"></div>
+				</div>
+				<div class="countries">
+					<h4>Server location:</h4>
+					<h3><span id="country-label"></span> <span class="arrow"></span></h3>
+				</div>
+				<div class="promobox">
+					<div id="turbo-start-box" style="display:none">
+						<h4>Welcome to the Most Powerful VPN!</h4>
+						<h2>Check our High Speed network:</h2>
+						<div class="button try" id="turbo-7day-button">Activate Faster Network</div>
+					</div>
+					
+					<div id="turbo-activating-box" style="display:none">
+						<div class="turbo-activating">
+							<h2 class="text-opacity" style="display:block">Activating Faster Network...</h2>
+						</div>
+					</div>
+					<div id="turbo-success-box" style="display:none">
+						<h4>Hello!</h4>
+						<h2>We activated Faster Network for you!</h2>
+						<h4>Enjoy your week of triple speed</h4>
+						<h4>in all DotVPN locations for free.</h4>
+						<!--<div class="button tryt" id="turbo-diff-button">See Premium Features</div>-->
+					</div>
+					<div id="turbo-notification-box" style="display:none">
+						<h2>Faster Network will expire soon:</h2>
+						<h4>Triple your speed in Premium locations!</h4>
+						<div class="button tryt" id="turbo-trial-button1">Go Premium Now</div>
+					</div>
+					<div id="turbo-end-box" style="display:none">
+						<h2>On free account big files load slowly:</h2>
+						<h4>Triple your speed in Premium locations!</h4>
+						<div class="button tryt" id="turbo-trial-button">Get DotVPN Premium</div>
+					</div>
+					
+					<div id="share-box" style="display:none">
+						<h2>Please, Share Us!</h2>
+						<h3>Is DotVPN a great service for you?</h3>
+						<div class="button fb" id="share-fb-button">Share</div>
+						<div class="button tw" id="share-tw-button">Tweet</div>
+					</div>
+					<div id="mobile-apps-box" style="display:none">
+						<h2>Stay Connected Everywhere!</h2>
+						<h3>DotVPN for phones and tablets:</h3>
+						<div class="button gplay" id="google-play-button1">Google Play</div>
+						<div class="button astore" id="app-store-button1">App Store</div>
+					</div>
+					<div class="no-connection" id="connect-fail-box" style="display:none">
+						<h4 class="text-opacity">Trying to connect</h4>
+						<h2>DotVPN can't connect to network</h2>
+						<h4>Check your Internet connection</h4>
+					</div>
+				</div>
+			</div>
+			<div id="selectcountry" class="selectcountry sc-off">
+				<div data-code="ca">canada</div>
+				<div data-code="de">germany</div>
+				<div data-code="fr">france</div>
+				<div data-code="jp">japan</div>
+				<div data-code="nl">netherlands</div>
+				<div data-code="sg">singapore</div>
+				<div data-code="es">spain</div>
+				<div data-code="se">sweden</div>
+				<div data-code="ch">switzerland</div>
+				<div data-code="ru">russia</div>
+				<div data-code="uk">united kingdom</div>
+				<div data-code="us">united states</div>
+			</div>
+		</div>
+		<div class="leftmenu">
+			<div class="top">
+				<h1 id="account-type-label" data-free-resource="accountTypeFree"
+						data-premium-resource="accountTypePremium"></h1>
+				<h2 id="email-label"></h2>
+			</div>
+			<div class="list">
+				<div class="separator"></div>
+				<div id="menu-upgrade-button" style="display:none">
+					<div class="item">
+						<div class="ico ico-premium"></div>
+						<h3>Upgrade to Premium</h3>
+						<div class="arrow"></div>
+					</div>
+				</div>
+				<div id="menu-premium-button" style="display:none">
+					<div class="item">
+						<div class="ico ico-premium"></div>
+						<h3>Turbo is Active</h3>
+						<div class="arrow"></div>
+					</div>
+				</div>
+				<div class="sepamini"></div>
+				<div class="item" id="menu-change-password-button">
+					<div class="ico ico-password"></div>
+					<h3>Change Password</h3>
+					<div class="arrow"></div>
+				</div>
+				<div class="sepamini"></div>
+				<div class="item" id="menu-share-button">
+					<div class="ico ico-share"></div>
+					<h3>Share with Friends</h3>
+					<div class="arrow"></div>
+				</div>
+				<div class="sepamini"></div>
+				<div class="item" id="menu-rate-button">
+					<div class="ico ico-rate"></div>
+					<h3>Rate Our Service</h3>
+					<div class="arrow"></div>
+				</div>
+				<div class="sepamini"></div>
+				<div class="item" id="menu-support-button">
+					<div class="ico ico-support"></div>
+					<h3>Customer Support</h3>
+					<div class="arrow"></div>
+				</div>
+				<div class="separator"></div>
+			</div>
+			<div class="signout">Sign Out</div>
+			<div id="backl" class="back"></div>
+		</div>
+		<div class="rightmenu">
+			<div class="top">
+				<h1>Settings</h1>
+			</div>
+			<div class="list">
+				<div class="separator"></div>
+				<div class="item">
+					<h3>Bandwidth Saver</h3>
+					<div class="toggle" id="bandwidth-saver-switch">
+						<div class="switch"></div>
+					</div>
+				</div>
+				<div class="separator"></div>
+				<div class="item">
+					<h3>AdBlock</h3>
+					<div class="toggle" id="adblock-switch">
+						<div class="switch"></div>
+					</div>
+				</div>
+				<div class="separator"></div>
+				<div class="item">
+					<h3>Tracking Protection</h3>
+					<div class="toggle" id="tracking-protection-switch">
+						<div class="switch"></div>
+					</div>
+				</div>
+				<div class="separator"></div>
+				<div class="item">
+					<h3>Block Analytics</h3>
+					<div class="toggle" id="block-analytics-switch">
+						<div class="switch"></div>
+					</div>
+				</div>
+				<div class="separator"></div>
+				<div class="item">
+					<h3>Firewall</h3>
+					<div class="toggle" id="firewall-switch">
+						<div class="switch"></div>
+					</div>
+				</div>
+				<div class="separator"></div>
+				<div class="item">
+					<h3>Connect on Start</h3>
+					<div class="toggle" id="auto-start-switch">
+						<div class="switch"></div>
+					</div>
+				</div>
+				<div class="separator"></div>
+				<div class="item">
+					<h3>Hide Application Icon</h3>
+					<div class="toggle" id="hide-app-icon">
+						<div class="switch"></div>
+					</div>
+				</div>
+				<div class="separator"></div>
+				<div id="privacy" class="item pointer">
+					<h3>Privacy Policy</h3>
+					<div class="arrow"></div>
+				</div>
+				<div class="separator"></div>
+				<div id="improve" class="item pointer">
+					<h3>Improve DotVPN</h3>
+					<div class="arrow"></div>
+				</div>
+				<div class="separator"></div>
+				<div class="item">
+					<h3>App Version</h3>
+					<div class="appversion">
+					<h3 id="app-version"></h3>
+					</div>
+				</div>
+				<div class="separator"></div>
+			</div>
+			<div id="backr" class="back"></div>
+		</div>
+		</div>
+		<div id="privacy-popup" class="supup">
+			<div class="header">
+				<div class="title">Privacy Policy</div>
+				<div class="icon-close"></div>
+			</div>
+			<div class="separator"></div>
+			<div class="content">
+				<div class="privacy">
+            Please read our Privacy Policy. In this section of our Site, we describe how dotvpn.com (hereinafter - Website, DotVPN) handles your personal information, what information about you we collect and store what rules define your interaction with us.<br /><br />
+
+            The main objective of DotVPN is to ensure your privacy, security and anonymity online. We never represent information about you to the third parties.<br /><br />
+
+            1. FOREWORD<br /><br />
+
+            Site and the services available through it, are under the control of Smart Security Ltd. (the «Company»). Registered office: 18/F., Wanchai Central Building, 89 Lockhart Road, Wanchai, Hong Kong.<br /><br />
+
+            We are a leading supplier of tools to protect the confidentiality and anonymity in the Internet.<br /><br />
+
+            The Company undertakes to ensure the protection of your confidential information. Our Privacy Policy explains what information we collect about you, how we use the information we collect about you, how you can let us know if you prefer to limit the use of such information. Policy also establishes a set of procedures used by us to maintain the confidentiality of your information.<br /><br />
+
+            By providing your information, you consent to use such information in accordance with this privacy policy. If we change our privacy policy, any changes will be posted on this page without prior notice.<br /><br />
+
+            If you have any questions regarding these terms, please contact us by e-mail (info@dotvpn.com). Our privacy policy (the «Privacy Policy») applies when using our site. Before you start to use our site, carefully read the privacy policy. Starting to use the Website, you automatically accept our privacy policy and agree to comply with its provisions. If you do not agree with our privacy policy, please refrain from using of our Site.<br /><br />
+
+            2. THE INFORMATION WE COLLECT<br /><br />
+
+            In order to provide services through the Site, we may collect personal information that will be used solely for display and personalization user personal cabinet for ease of administration and development services.  The company collects and stores the following information about users:<br /><br />
+
+            1. Registration info During registration, we will save your username, email address, password (in encrypted SHA256). We will need your user name and password for access you to the web control panel and to download software DotVPN. We need your email address to reset your password or if you want to receive our newsletter. We use personal information to provide services, which you ask us to provide. Unless you notify us that you do not wish to receive such information, we may occasionally inform you of our products and services. Informing us by email or by phone your personal information, you hereby consent to our use of your information in order to this Policy.<br /><br />
+
+            2. IP address of the user We store your IP address within 24 hours since you last connected. We need your IP-address to prevent spam, fraud or other abuse of our Site and our services.<br /><br />
+
+            3. Date of the registration We store the date of registration of your account to its own statistics, and to provide you in the future with favorable terms of use of the service and loyalty programs, about which you can read in the news section of the Website.<br /><br />
+
+            4. Payment Dates of subscription fee We store information about payment dates of subscription fee for the regulation and control of the timely payment and repayment of debts.<br /><br />
+
+            5. Information about visits of certain pages of the Site The company has the right to collect information about visits of certain pages of the Site, the frequency and duration of use of the service. All this information is used solely to provide services and improve service quality and development of all services.<br /><br />
+
+            6. Information about software version Where appropriate, we may store information on the software version used by the user to ensure compatibility with products and services.<br /><br />
+
+            7. Cookies Cookies – are small files that are stored in your browser. Using cookies different sites know you and restore specified settings for your convenience. DotVPN also uses cookies, to track orders, improve the quality of your services, etc.<br /><br />
+
+            Our cookies record the browser used by you, your language, you visit the page of our site and duration of the visit of each of them.<br /><br />
+            You can disable cookies in your browser settings, but in this case we can not guarantee the availability of all our products and services.<br /><br />
+            We use the following types of cookies: Cookies Google Analytics: __utma, __utmb, __utmc, __utmz. These files allow you to take into account the number of page impressions and traffic sources. With their help we are able to measure and improve the performance of our Site, using a service provided by Google Analytics.<br /><br />
+            Affiliate cookies: pid, fid. These files allow you to identify the partner who sent you to our site that will pay him a commission partnerships.<br /><br />
+            8. Data obtained during contacts with tech support or leaving comments on our Website. When you leave a comment on our website or contact our technical support service, we can keep your data up to two years if the legal reasons and exceptional circumstances require longer storage. We do not save or store users’ credit card information. Payments by credit cards are processed in real-time by authorized agents. Withdraw funds from the credit card is automatically and instantly. We do not store credit card data and other payment information. If the need to return of funds to the user, it is credited to the user’s credit card through authorized agencies.<br /><br />
+
+            3. STORAGE AND USE OF INFORMATION<br /><br />
+
+            We do not sell or share your personal data, do not provide access to the history of user connections services to third parties. The only exception is decision of the Hong Kong Court with a demand to provide such access to representatives of law.<br /><br />
+
+            We reserve the right to use the information we collect for the following purposes:<br /><br />
+
+            We may contact you by phone or e-mail on quality issues or technical problems and other issues related to the Service, and for notification of changes in the composition and properties of services and information.<br /><br />
+
+            We may contact you to notify you about the expiration of Contract and offer the prolongation of services.<br /><br />
+
+            With your permission, we may contact you by phone or email for notifications about new DotVPN services and special DotVPN offers.<br /><br />
+
+            Your personal information that you trust us is stored on servers in Hong Kong. Only authorized DotVPN employees have access thereto, including our representatives located in other countries who can get access to some of the information regarding payment issues and the quality of services, and other information necessary for the development of services and assistance to users in a particular country.<br /><br />
+
+            We may share the information which is necessary for the implementation of services to third parties only with your permission. If our business will be subject to a merger or acquisition with another company, your information may become available for new business partners and owners. If only the law will not require it, we will not disclose, sell or distribute the information that we provide by users without their consent.<br /><br />
+
+            4. PROTECTING OF YOUR INFORMATION<br /><br />
+
+            All information about customers, including their user names and passwords are stored in encrypted form. Algorithms used by us to protect the information can not be hacked by any of the currently existing methods. Multi-level corporate authentication system that we use ensures that access to your data will be provided only to those employees who are directly involved you acquire services.<br /><br />
+
+            Among DotVPN company there is a strict data protection system, suggesting heavy fines and even criminal liability for unauthorized access and distribution of our data.<br /><br /><br /><br />
+				</div>
+			</div>
+		</div>
+		<div id="improve-popup" class="supup sp-off">
+			<div class="header">
+				<div class="title">Improve DotVPN</div>
+				<div class="icon-close"></div>
+			</div>
+			<div class="separator"></div>
+			<div class="content">
+				<div class="improve">
+					<div class="inside">
+						<div class="ico ico-improve"></div>
+						<h1>Help us make DotVPN better!</h1>
+						<h3>If you have any ideas how to<br />improve DotVPN - just write to us</h3>
+						<div class="input"><input type="text" id="improve-popup-subject" placeholder="Type Subject"></div>
+						<div class="textarea"><textarea id="improve-popup-text" placeholder="Type Message"></textarea></div>
+						<div class="button" id="improve-popup-send-button">Send</div>
+					</div>
+					<div class="step" id="improve-popup-loader">
+						<div class="ico-loading"></div>
+					</div>
+					<div class="step" id="improve-popup-finish">
+						<div class="ico-checked"></div>
+						<h1>Your message<br />has been sent</h1>
+						<div class="button-checked">Close</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="support-popup" class="supup sp-off">
+			<div class="header">
+				<div class="title">Customer Support</div>
+				<div class="icon-close"></div>
+			</div>
+			<div class="separator"></div>
+			<div class="content">
+				<div class="support">
+					<div class="inside">
+						<div class="ico ico-support"></div>
+						<h1>Do you have any questions?</h1>
+						<h1>We are ready to help:</h1>
+						<div class="input"><input type="text" id="support-popup-subject" placeholder="Type Subject"></div>
+						<div class="textarea"><textarea id="support-popup-text" placeholder="Type Message"></textarea></div>
+						<div class="button" id="support-popup-send-button">Send</div>
+					</div>
+					<div class="step" id="support-popup-loader">
+						<div class="ico-loading"></div>
+					</div>
+					<div class="step" id="support-popup-finish">
+						<div class="ico-checked"></div>
+						<h1>Your question<br />has been sent</h1>
+						<div class="button-checked">Close</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="rate-popup" class="supup sp-off">
+			<div class="header">
+				<div class="title">Rate Our Service</div>
+				<div class="icon-close"></div>
+			</div>
+			<div class="separator"></div>
+			<div class="content">
+				<div class="rate">
+					<div class="inside">
+						<div class="ico ico-rate"></div>
+						<h1>Please, Review Us!</h1>
+						<p>Leave a comment about our application for people who are not yet with us. They will also be able to take advantage of the free Internet without limits with the highest encryption.</p>
+						<div class="button" id="rate-button">Review in <span id="popup-rate-browser" data-crm="Chrome" data-opr="Opera"></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="share-popup" class="supup sp-off">
+			<div class="header">
+				<div class="title">Share with Friends</div>
+				<div class="icon-close"></div>
+			</div>
+			<div class="separator"></div>
+			<div class="content">
+				<div class="share">
+					<div class="inside">
+						<div class="ico ico-share"></div>
+						<!--<h1><span id="popup-share-user-name"></span>, please share us!</h1>-->
+						<h1>Please, Share Us!</h1>
+						<div class="button" id="popup-fb-button">Share on Facebook</div>
+						<div class="button" id="popup-tw-button">Post on Twitter</div>
+						<p>Invite your friends to take advantage of the free Internet without limits with the highest encryption.</p>
+						<p>Together we will try to make the Internet a little better.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="change-password-popup" class="supup sp-off">
+			<div class="header">
+				<div class="title">Change Password</div>
+				<div class="icon-close"></div>
+			</div>
+			<div class="separator"></div>
+			<div class="content">
+				<div class="password">
+					<div class="inside">
+						<div class="ico ico-password"></div>
+						<h1>Create a new password</h1>
+						<div class="input"><input type="password" id="popup-password" placeholder="Type New Password"></div>
+						<div class="input"><input type="password" id="popup-confirm-password" placeholder="Confirm New Password"></div>
+						<div class="button" id="popup-password-button">Change</div>
+					</div>
+					<div class="step" id="change-password-popup-loader">
+						<div class="ico-loading"></div>
+					</div>
+					<div class="step" id="change-password-popup-finish">
+						<div class="ico-checked"></div>
+						<h1>Your password<br />has been changed</h1>
+						<div class="button-checked">Close</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="upgrade-popup" class="supup sp-off">
+			<div class="header">
+				<div class="title">Upgrade to Premium</div>
+				<div class="icon-close"></div>
+			</div>
+			<div class="separator"></div>
+			<div class="content">
+				<div class="upgrade">
+					<div class="inside">
+						<h1>Triple Your Speed with<br>Premium on all devices!</h1>
+						<div class="button-yellow" id="popup-start-button">Get DotVPN Premium</div>
+						<h5>Cancel anytime. If you're not satisfied<br>for any reason, we'll give you a full refund.</h5>
+						<div class="separator"></div>
+						<p>Triple your speed through all DotVPN Premium locations.</p>
+						<p>Access our premium network even through VPN blocking on your local network or ISP.</p>
+						<p>Use it on your phone, tablet, or laptop - up to 5 devices at once.</p>
+						<p>Stronger protection. Safer browsing.</p>
+						<p>No restrictions. No advertising.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="premium-popup" class="supup sp-off">
+			<div class="header">
+				<div class="title">Turbo is Active</div>
+				<div class="icon-close"></div>
+			</div>
+			<div class="separator"></div>
+			<div class="content">
+				<div class="upgrade">
+					<div class="inside">            
+						<h1>Faster Network is active!</h1>
+						<h4>You have Premium account:</h4>
+						<p>Triple speed through all DotVPN Premium locations.</p>
+						<p>Access to premium network even through VPN blocking on your local network or ISP.</p>
+						<p>Use it on your phone, tablet, or laptop - up to 5 devices at once.</p>
+						<p>Strong protection. Safe browsing.</p>
+						<p>No restrictions. No advertising.</p>
+						<h3>If you want to disable your account<br>you can do it in our plans section:</h3>
+						<div class="button" id="popup-plans-button">Manage Subscription</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

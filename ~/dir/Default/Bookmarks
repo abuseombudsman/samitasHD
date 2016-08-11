@@ -1,0 +1,45 @@
+{
+   "checksum": "6fca6b58c7ade246f34a49b106be3349",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13111163329345181",
+            "id": "6",
+            "name": "Download | TunnelBear",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "https://www.tunnelbear.com/download"
+         }, {
+            "date_added": "13114326600602968",
+            "id": "7",
+            "name": "IPTV плейлист спортивные каналы | IPTVSENSEI.RU",
+            "sync_transaction_version": "1",
+            "type": "url",
+            "url": "http://iptvsensei.ru/sborki-pleylistov/sportivnyie/"
+         } ],
+         "date_added": "13115409170860895",
+         "date_modified": "13114326600602968",
+         "id": "1",
+         "name": "Bokmärkesfältet",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13115409170860900",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Övriga bokmärken",
+         "type": "folder"
+      },
+      "sync_transaction_version": "1",
+      "synced": {
+         "children": [  ],
+         "date_added": "13115409170860901",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Bokmärken i mobilen",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}
