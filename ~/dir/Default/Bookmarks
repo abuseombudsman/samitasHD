@@ -1,5 +1,5 @@
 {
-   "checksum": "6fca6b58c7ade246f34a49b106be3349",
+   "checksum": "97ea61966d7dab866f4c2779eea1e6d6",
    "roots": {
       "bookmark_bar": {
          "children": [ {
@@ -13,12 +13,26 @@
             "date_added": "13114326600602968",
             "id": "7",
             "name": "IPTV плейлист спортивные каналы | IPTVSENSEI.RU",
-            "sync_transaction_version": "1",
+            "sync_transaction_version": "2",
             "type": "url",
             "url": "http://iptvsensei.ru/sborki-pleylistov/sportivnyie/"
+         }, {
+            "date_added": "13116268078485756",
+            "id": "10",
+            "name": "IPTV BIN RUSSIAN SPORTS ~ iptvbin - iptvlinks",
+            "sync_transaction_version": "3",
+            "type": "url",
+            "url": "http://www.iptvbin.com/2016/04/iptv-bin-russian-sports.html"
+         }, {
+            "date_added": "13116268089766548",
+            "id": "11",
+            "name": "#EXTINF:0,Матч! Наш Спорт - Sök på Google",
+            "sync_transaction_version": "4",
+            "type": "url",
+            "url": "https://www.google.se/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=%23EXTINF%3A0%2C%D0%9C%D0%B0%D1%82%D1%87!+%D0%9D%D0%B0%D1%88+%D0%A1%D0%BF%D0%BE%D1%80%D1%82"
          } ],
          "date_added": "13115409170860895",
-         "date_modified": "13114326600602968",
+         "date_modified": "13116268089766548",
          "id": "1",
          "name": "Bokmärkesfältet",
          "type": "folder"
@@ -31,7 +45,7 @@
          "name": "Övriga bokmärken",
          "type": "folder"
       },
-      "sync_transaction_version": "1",
+      "sync_transaction_version": "4",
       "synced": {
          "children": [  ],
          "date_added": "13115409170860901",

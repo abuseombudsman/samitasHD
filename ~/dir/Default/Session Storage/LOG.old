@@ -1,4 +1,3 @@
-2016/08/11-19:13:03.936 13079 Reusing MANIFEST /run/media/root/5b8836c8-152b-44da-a49d-47f8080b4d6e/admin/samitasHD/~/dir/Default/Session Storage/MANIFEST-000001
-2016/08/11-19:13:53.001 14062 Level-0 table #5: started
-2016/08/11-19:13:53.154 14062 Level-0 table #5: 61793 bytes OK
-2016/08/11-19:13:53.336 14062 Delete type=0 #3
+2016/08/11-22:50:33.800 27318 Reusing MANIFEST /run/media/root/5b8836c8-152b-44da-a49d-47f8080b4d6e/admin/samitasHD/~/dir/Default/Session Storage/MANIFEST-000001
+2016/08/11-22:50:33.800 27318 Recovering log #4
+2016/08/11-22:50:33.800 27318 Reusing old log /run/media/root/5b8836c8-152b-44da-a49d-47f8080b4d6e/admin/samitasHD/~/dir/Default/Session Storage/000004.log 

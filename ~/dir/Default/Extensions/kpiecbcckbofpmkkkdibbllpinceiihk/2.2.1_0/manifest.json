@@ -1,0 +1,28 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "i/icons/38/trans.png",
+         "38": "i/icons/38/trans.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "default_locale": "en",
+   "description": "__MSG_appDesc__",
+   "icons": {
+      "128": "i/icons/icon128.png",
+      "16": "i/icons/icon16.png",
+      "32": "i/icons/icon32.png",
+      "48": "i/icons/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtXtzEgEst6G8Tc3ZzYvQE+0SKY7bYv3pp0+jFGtzJdX1jcEpvy8ZLfw4Fx4NMrvAFygwy/vJUkpVdjtk2JXwL8bf4ykR5IGKhfY1tOouKG/1o41hl5Hq/sEJEEWatjL9shzFWF4IJ/1O++L/GazFTWMSBbnl6eCtKcRW4yrtK/yoGczIozm2nRZYPETs5js5C3q1O9aUDCmtr3xY2P3gpZhOd/E6fK6S/I9cMMzDgL8F6AUB2fnFRZ91K1QwlF++dQt4//mNo9JutNX/h4PnyDGXEG8Kq51HE3AAWIruLpc/PO0PwaC82iXslgblcM+5kfEkPKboFFNLNXq10lZYfQIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "18",
+   "name": "__MSG_appName__",
+   "permissions": [ "proxy", "webRequest", "webRequestBlocking", "http://*/*", "https://*/*", "ftp://*/*", "background", "management" ],
+   "short_name": "__MSG_appShortName__",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.2.1"
+}
